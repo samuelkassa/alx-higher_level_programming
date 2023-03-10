@@ -10,7 +10,7 @@ if __name__ = "__main__":
         print("{:d} argument:".format(conter))
         print("{:d}: {:s}".format(index, sys.argv[1]))
     else:
-        print("{:d} arguments".format(counter))
+        print("{:d} arguments:".format(counter))
         while index <= counter:
             print("{:d}: {:s}".format(index, sys.argv[index]))
             index += 1
