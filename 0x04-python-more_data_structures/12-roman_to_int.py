@@ -18,4 +18,3 @@ def roman_to_int(roman_string):
         if decs[i - 1] < decs[i] and i != 0:
             output -= (decs[i - 1] + decs[i - 1])
     return output
-
