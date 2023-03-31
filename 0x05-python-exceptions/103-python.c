@@ -42,7 +42,8 @@ void print_python_list(PyObject *p)
 }
 
 /**
- * print_python_bytes - This function prints a basic info about python bytes object
+ * print_python_bytes - This function prints a basic info about python bytes
+ * object
  * @p: A PyObject byte object
  */
 
@@ -50,6 +51,7 @@ void print_python_bytes(PyObject *p)
 {
 	Py_ssize_t size, i;
 	PyBytesObject *bytes = (PyBytesObject *)p;
+
 	fflush(stdout);
 
 	printf("[.] bytes object info\n");
