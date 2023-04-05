@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""Python class for printing"""
+
+
 class Square():
     """square class with it's size and proper validation"""
 
