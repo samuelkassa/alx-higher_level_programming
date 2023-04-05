@@ -2,7 +2,7 @@
 """Python class for printing"""
 
 
-class Square():
+class Square:
     """square class with it's size and proper validation"""
 
     def __init__(self, size=0, position=(0, 0)):
