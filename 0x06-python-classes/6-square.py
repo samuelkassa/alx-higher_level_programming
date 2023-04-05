@@ -27,6 +27,8 @@ class Square:
             return TypeError("size must be an integer")
         elif (value < 0):
             return ValueError("size must be >= 0")
+        else:
+            self.__size = value
 
     @position.setter
     def position(self, value):
