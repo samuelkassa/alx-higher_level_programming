@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""Python class for printing"""
+"""Square class to represent a square"""
 
 
-class Square:
+class Square():
     """square class with it's size and proper validation"""
 
     def __init__(self, size=0, position=(0, 0)):
         """"Initialize data"""
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -46,15 +46,15 @@ class Square:
 
     def area(self):
         """"get area of the square"""
-        return self.__size ** 2
+        return self.size ** 2
 
     def my_print(self):
         """print the square"""
-        if self.__size == 0:
+        if self.size == 0:
             print()
         else:
-            for i in range(self.__position[1]):
+            for i in range(self.position[1]):
                 print("")
-            for i in range(self.__size):
-                print(" " * self.__position[0], end="")
-                print("#" * self.__size)
+            for i in range(self.size):
+                print(" " * self.position[0], end="")
+                print("#" * self.size)
