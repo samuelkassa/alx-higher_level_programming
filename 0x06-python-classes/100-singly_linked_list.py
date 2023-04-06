@@ -28,13 +28,14 @@ class Node:
     @property
     def next_node(self):
         return self.__next_node
-    
+
     @next_node.setter
     def next_node(self, value):
         if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
         else:
             self.__next_node = value
+
 
 class SinglyLinkedList:
     """Represent a singly linked list"""
@@ -45,10 +46,10 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """inserts a new node to SinglyLinkedList
-        
+
         The node is inserted into the list at the correct
         ordering position
-        
+
         Args:
             value(Node): The new node to insert
         """
@@ -75,4 +76,3 @@ class SinglyLinkedList:
                 value.append(str(temp.data))
                 temp = temp.next_node
             return('\n'.join(value))
-
