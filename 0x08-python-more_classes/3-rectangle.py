@@ -50,6 +50,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
+
     def __str__(self):
         """ Return the printable representation of the rectangle
         Represents the rectangle with the # character.
@@ -58,7 +59,7 @@ class Rectangle:
             return ("")
 
         temp = []
-        for i in range (self.__height):
+        for i in range(self.__height):
             [temp.append('#') for j in range(self.__width)]
             if i != self.__height - 1:
                 temp.append("\n")
