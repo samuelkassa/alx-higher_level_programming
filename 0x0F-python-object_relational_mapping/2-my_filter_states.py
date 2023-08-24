@@ -20,4 +20,4 @@ if __name__ == "__main__":
         if row[1] == argv[4]:
             print(row)
     c.close()
-    db.close()01~
+    db.close()
