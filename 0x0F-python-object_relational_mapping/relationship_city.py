@@ -1,23 +1,26 @@
 #!/usr/bin/python3
-"""Script creates State California and City San Francisco in database
-Takes three arguments
-    mysql username
-    mysql password
-    database name
-Connects to host localhost and default port (3306)
 """
-if __name__ == "__main__":
-    from sqlalchemy import create_engine
-    from sqlalchemy.orm import sessionmaker
-    from relationship_state import Base, State
-    from relationship_city import City
-    from sys import argv
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-        argv[1], argv[2], argv[3]), pool_pre_ping=True)
-    Base.metadata.create_all(engine)
-    Session = sessionmaker()
-    session = Session(bind=engine)
-    ca = State(name="California", cities=[City(name="San Francisco")])
-    session.add(ca)
-    session.commit()
-    session.close()
+class definition of a State and an instance Base = declarative_base()
+"""
+
+from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy.ext.declarative import declarative_base
+from relationship_state import Base
+
+
+class City(Base):
+    """
+    City class:
+    inherits from Base
+    links to the MySQL table states
+    class attribute id that represents a column of an auto-generated,
+    unique integer, cant be null and is a primary key
+    class attribute name that represents a column of a string
+    with maximum 128 characters and cant be null
+    class attribute state_id that represents a column of an integer,
+    can’t be null and is a foreign key to states.id
+    """
+    __tablename__ = 'cities'
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+    name = Column(String(128), nullable=False)
+    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
